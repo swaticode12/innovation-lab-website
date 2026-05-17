@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Innovation Lab Eswatini | Contact & Consultations – Let’s Innovate Together</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="contact.css">
+  <script src="contact.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container" id="navContainer">
+    <a href="#" class="logo">IL Eswatini</a>
+    <div class="mobile-menu" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="functionality.html">How We Work</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="page-header">
+    <h1>Let’s Talk Innovation</h1>
+    <p style="color:#B0C0E0;">Reach out, share your challenge — we’ll help you build a strategic digital roadmap.</p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- Consultation Form (most important) -->
+    <div class="form-col">
+      <h2 style="margin-bottom: 1rem; font-size: 1.8rem;">📋 Request a consultation</h2>
+      <form id="consultationForm">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="fullName" placeholder="Thabo Dlamini" required>
+        </div>
+        <div class="form-group">
+          <label>Business Name</label>
+          <input type="text" id="businessName" placeholder="Your startup or company">
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="email" placeholder="hello@yourbusiness.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" id="phone" placeholder="+268 76XX XXXX" required>
+        </div>
+        <div class="form-group">
+          <label>Business Type</label>
+          <select id="businessType">
+            <option value="">Select one</option>
+            <option>Startup</option>
+            <option>Small Business / SME</option>
+            <option>Service Business</option>
+            <option>Educational organization</option>
+            <option>Entrepreneur</option>
+            <option>Retail</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>How can we help you?</label>
+          <textarea rows="4" id="challenge" placeholder="Tell us briefly about your business challenge, idea, or area where you need strategic guidance..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Inquiry →</button>
+        <p style="font-size: 0.75rem; margin-top: 1rem; opacity: 0.6;">We’ll review your request and schedule a consultation within 24–48 hours.</p>
+      </form>
+    </div>
+
+    <!-- Contact Information + WhatsApp CTA -->
+    <div class="info-col">
+      <h2 style="margin-bottom: 1.5rem;">📞 Connect directly</h2>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <div><strong>Email</strong><br>hello@innovationlab.co.sz</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+        <div><strong>WhatsApp (Preferred)</strong><br>+268 7610 5678</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div><strong>Location</strong><br>Manzini, Eswatini (also remote engagements)</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div><strong>Business hours</strong><br>Mon–Fri: 9:00 – 17:00 (SAST)</div>
+      </div>
+
+      <!-- WhatsApp CTA (VERY IMPORTANT for African markets) -->
+      <div class="whatsapp-card">
+        <i class="fab fa-whatsapp" style="font-size: 2rem; color:#25D366;"></i>
+        <h3 style="margin: 0.5rem 0;">Chat With Us on WhatsApp</h3>
+        <p>Quick, direct, and trusted. Click below to start a conversation with our strategy team.</p>
+        <a href="https://wa.me/26876105678?text=Hello%20Innovation%20Lab%2C%20I%27d%20like%20to%20discuss%20innovation%20consulting%20for%20my%20business." class="whatsapp-btn" target="_blank">
+          <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Message us on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: rgba(0,0,0,0.3); border-radius: 48px; padding: 2rem; margin: 2rem 0;">
+    <h2 style="text-align: center; margin-bottom: 1.5rem;">Frequently asked questions</h2>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">Do you only work with businesses in Eswatini? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">No, we are open to working with businesses across Africa and beyond. Our strategic model adapts to remote collaboration seamlessly.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">Do I need a website already? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Not at all. We help businesses at different stages of digital growth — from early ideas to operational maturity.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">What happens after I submit the form? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">We review your inquiry and schedule a free, no-obligation consultation session to understand your goals and challenges.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question">Do you offer ongoing support? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Yes! We provide follow-up sessions, strategic guidance, and innovation support as your business grows.</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Innovation Lab Eswatini</h4>
+      <p>Strategic digital & innovation consulting.</p>
+      <div class="social-icons">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-github"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="#">How we work</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Community</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">hello@innovationlab.co.sz</a>
+      <a href="#">+268 7610 5678</a>
+      <a href="#">Mbabane, Eswatini</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 Innovation Lab Eswatini — Turning ideas into real digital solutions. All rights reserved.<br>
+    <span style="font-size:0.7rem;">We help businesses identify and design digital solutions — reach out today.</span>
+  </div>
+</footer>
+
+</body>
+</html>
