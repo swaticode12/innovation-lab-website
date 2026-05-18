@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Innovation Lab Eswatini | Strategic Pricing – Flexible Consulting Packages</title>
+  <!-- Google Fonts: Clean Sans-Serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0A0A0F;
+      font-family: 'Inter', 'Space Grotesk', sans-serif;
+      color: #F5F5F5;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      background-image: 
+        linear-gradient(rgba(30,30,40,0.85) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30,30,40,0.85) 1px, transparent 1px);
+      background-size: 48px 48px;
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 18, 26, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+      padding: 0.9rem 0;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #00F0FF;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      font-family: 'Space Grotesk', monospace;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #F5F5F5;
+      font-weight: 500;
+      transition: 0.25s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #00F0FF;
+      text-shadow: 0 0 6px rgba(0,240,255,0.4);
+    }
+
+    .cta-nav {
+      border: 1.5px solid #00F0FF;
+      background: transparent;
+      padding: 0.5rem 1.4rem;
+      border-radius: 40px;
+      color: #00F0FF;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    .cta-nav:hover {
+      background: #A855F7;
+      border-color: #A855F7;
+      color: #000;
+      box-shadow: 0 0 14px #A855F7;
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 1.8rem;
+      color: #00F0FF;
+      cursor: pointer;
+    }
+
+    /* page header */
+    .page-header {
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFFFFF, #00F0FF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.75rem;
+    }
+
+    .subhead {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #BCC6E6;
+      font-size: 1.1rem;
+    }
+
+    /* pricing toggle */
+    .toggle-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0 3rem;
+    }
+    .toggle-btn {
+      background: #1E1E2A;
+      padding: 0.5rem 1.5rem;
+      border-radius: 60px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+      border: 1px solid #2F2F44;
+    }
+    .toggle-btn.active {
+      background: #00F0FF;
+      color: #000;
+      border-color: #00F0FF;
+      box-shadow: 0 0 10px rgba(0,240,255,0.4);
+    }
+    .save-badge {
+      background: #A855F7;
+      border-radius: 60px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    /* pricing cards grid */
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 3rem 0;
+    }
+    .pricing-card {
+      background: #111118;
+      border-radius: 40px;
+      padding: 2rem 1.8rem;
+      flex: 1;
+      min-width: 280px;
+      transition: all 0.3s ease;
+      border: 1px solid #2C2C44;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border: 2px solid #00F0FF;
+      transform: scale(1.02);
+      background: #12121C;
+      box-shadow: 0 0 30px rgba(0,240,255,0.15);
+    }
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: #00F0FF;
+      color: #000;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+    .card-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .card-header h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .price {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #00F0FF;
+    }
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #aaa;
+    }
+    .perks-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .perks-list li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .perks-list i.fa-check-circle {
+      color: #A855F7;
+    }
+    .btn-price {
+      background: transparent;
+      border: 1.5px solid #00F0FF;
+      color: #00F0FF;
+      padding: 0.8rem;
+      width: 100%;
+      border-radius: 60px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 1rem;
+    }
+    .btn-price:hover {
+      background: #00F0FF;
+      color: #000;
+      box-shadow: 0 0 12px #00F0FF;
+    }
+    .featured .btn-price {
+      background: #00F0FF;
+      color: #000;
+    }
+    .featured .btn-price:hover {
+      background: #A855F7;
+      border-color: #A855F7;
+    }
+
+    /* custom idea lab section */
+    .custom-section {
+      background: linear-gradient(145deg, #0C0C14, #0A0A12);
+      border-radius: 56px;
+      padding: 2.5rem;
+      margin: 2rem 0 3rem;
+      text-align: center;
+      border: 1px solid rgba(168,85,247,0.4);
+    }
+    .custom-btn {
+      background: transparent;
+      border: 1.5px solid #A855F7;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      margin-top: 1rem;
+      color: #A855F7;
+      cursor: pointer;
+    }
+    .custom-btn:hover {
+      background: #A855F7;
+      color: #000;
+    }
+
+    /* note section */
+    .note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 2rem;
+      padding: 1rem;
+      border-top: 1px solid #2C2C44;
+    }
+
+    footer {
+      background: #000000;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 4rem;
+      border-top: 1px solid #00F0FF20;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .footer-col h4 {
+      color: #00F0FF;
+      margin-bottom: 1rem;
+    }
+    .footer-col a, .footer-col p {
+      color: #BBBBCC;
+      text-decoration: none;
+      display: block;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+    .social-icons i {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: #E0E0E0;
+      transition: 0.2s;
+    }
+    .social-icons i:hover {
+      color: #00F0FF;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      color: #7A7A8A;
+      font-size: 0.8rem;
+      border-top: 1px solid #1F1F2F;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu {
+        display: block;
+      }
+      .nav-container.responsive .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #0F0F17;
+        padding: 1rem;
+        border-radius: 24px;
+        margin-top: 1rem;
+      }
+      .page-header h1 {
+        font-size: 2.4rem;
+      }
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container" id="navContainer">
+    <a href="#" class="logo">IL Eswatini</a>
+    <div class="mobile-menu" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="how-we-work.html">How We Work</a></li>
+      <li><a href="pricing.html" class="active">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="cta-nav">Start a Project</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="page-header">
+    <h1>Simple, transparent pricing</h1>
+    <p class="subhead">Strategic consulting packages designed for SMEs, students, and startups — no hidden fees, just clear value.</p>
+  </div>
+
+  <!-- billing toggle (monthly / one-off) -->
+  <div class="toggle-container">
+    <div class="toggle-btn active" data-plan="monthly">↻ Monthly Retainer</div>
+    <div class="toggle-btn" data-plan="oneoff">📌 One‑off Project</div>
+  </div>
+
+  <div class="pricing-grid" id="pricingGrid">
+    <!-- cards will be dynamically rendered but also static fallback, we'll use JS to populate -->
+  </div>
+
+  <!-- Custom / Idea Lab -->
+  <div class="custom-section">
+    <i class="fas fa-flask" style="font-size: 2.5rem; color: #A855F7;"></i>
+    <h2 style="margin: 0.8rem 0;">🎨 Idea Lab — Fully Tailored Package</h2>
+    <p>Need a combination of services, long-term innovation support, or a custom sprint? We’ll build a package around your goals and budget.</p>
+    <button class="custom-btn" id="customPlanBtn">Request Custom Quote →</button>
+  </div>
+
+  <div class="note">
+    <i class="fas fa-shield-alt"></i> No lock-in contracts • 100% remote or in-person (Eswatini) • All prices in SZL / ZAR (exchange adjusted)
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Innovation Lab Eswatini</h4>
+      <p>Strategic innovation & digital consulting.</p>
+      <div class="social-icons">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-github"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="services.html">Services</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="contact.html">hello@innovationlab.co.sz</a>
+      <a href="#">+268 7610 5678</a>
+      <a href="#">Mbabane, Eswatini</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 Innovation Lab Eswatini — Turning ideas into real digital products. All rights reserved.<br>
+    <span style="font-size:0.7rem;">Flexible pricing for SMEs, students & startups.</span>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navContainer = document.getElementById('navContainer');
+  if(mobileBtn) {
+    mobileBtn.addEventListener('click', () => {
+      navContainer.classList.toggle('responsive');
+    });
+  }
+
+  // pricing data: monthly retainers & one-off
+  const pricingData = {
+    monthly: [
+      {
+        name: "Starter",
+        price: "2,500",
+        period: "/month",
+        featured: false,
+        perks: [
+          "Monthly strategy session",
+          "Business problem audit",
+          "Email support (3 days/week)",
+          "Digital opportunity brief"
+        ],
+        cta: "Start Monthly"
+      },
+      {
+        name: "Growth",
+        price: "5,500",
+        period: "/month",
+        featured: true,
+        perks: [
+          "Bi‑weekly strategy & innovation calls",
+          "Full business & workflow analysis",
+          "Digital roadmap updates",
+          "Ongoing consultation (slack/whatsapp)",
+          "Priority support"
+        ],
+        cta: "Choose Growth"
+      },
+      {
+        name: "Enterprise",
+        price: "9,900",
+        period: "/month",
+        featured: false,
+        perks: [
+          "Unlimited strategic sessions",
+          "Dedicated innovation advisor",
+          "Process redesign & implementation plan",
+          "Monthly review + OKR alignment",
+          "Team workshops included"
+        ],
+        cta: "Talk to team"
+      }
+    ],
+    oneoff: [
+      {
+        name: "Discovery Sprint",
+        price: "3,500",
+        period: "one-off",
+        featured: false,
+        perks: [
+          "Full business & challenge audit",
+          "Innovation opportunity mapping",
+          "Strategic recommendations deck",
+          "One follow-up session"
+        ],
+        cta: "Book Sprint"
+      },
+      {
+        name: "Digital Strategy",
+        price: "7,500",
+        period: "one-off",
+        featured: true,
+        perks: [
+          "Complete digital transformation plan",
+          "Tech stack recommendations",
+          "Customer experience analysis",
+          "12‑month roadmap + MVP planning"
+        ],
+        cta: "Get Strategy"
+      },
+      {
+        name: "Full Innovation Audit",
+        price: "12,000",
+        period: "one-off",
+        featured: false,
+        perks: [
+          "Deep-dive operational & product review",
+          "Competitor & market positioning",
+          "Actionable innovation playbook",
+          "3 months of strategic follow‑ups"
+        ],
+        cta: "Request Audit"
+      }
+    ]
+  };
+
+  let currentPlan = "monthly";
+  const pricingGrid = document.getElementById("pricingGrid");
+
+  function renderPricing(planType) {
+    const plans = pricingData[planType];
+    if (!plans) return;
+    pricingGrid.innerHTML = "";
+    plans.forEach(plan => {
+      const card = document.createElement("div");
+      card.className = `pricing-card ${plan.featured ? "featured" : ""}`;
+      if (plan.featured) {
+        const badge = document.createElement("div");
+        badge.className = "popular-badge";
+        badge.innerText = "⭐ MOST POPULAR";
+        card.appendChild(badge);
+      }
+      card.innerHTML += `
+        <div class="card-header">
+          <h3>${plan.name}</h3>
+          <div class="price">SZL ${plan.price}<small> ${plan.period === "/month" ? "/month" : " one-off"}</small></div>
+          ${plan.period === "/month" ? '<span style="font-size:0.7rem;">+0% VAT for registered businesses</span>' : ''}
+        </div>
+        <ul class="perks-list">
+          ${plan.perks.map(p => `<li><i class="fas fa-check-circle"></i> ${p}</li>`).join('')}
+        </ul>
+        <button class="btn-price" data-plan-name="${plan.name}" data-plan-price="${plan.price}" data-plan-type="${planType}">${plan.cta} →</button>
+      `;
+      pricingGrid.appendChild(card);
+    });
+
+    // reattach event listeners to price buttons
+    document.querySelectorAll('.btn-price').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const planName = btn.getAttribute('data-plan-name');
+        const planPrice = btn.getAttribute('data-plan-price');
+        const planTypeLabel = currentPlan === 'monthly' ? 'Monthly Retainer' : 'One‑off Project';
+        showToast(`✅ You selected ${planName} (${planTypeLabel} | SZL ${planPrice}). We’ll reach out to schedule your onboarding.`, 'cta');
+      });
+    });
+  }
+
+  // toggle buttons
+  const toggleBtns = document.querySelectorAll('.toggle-btn');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentPlan = btn.getAttribute('data-plan');
+      renderPricing(currentPlan);
+    });
+  });
+
+  // custom quote button
+  const customBtn = document.getElementById('customPlanBtn');
+  if(customBtn) {
+    customBtn.addEventListener('click', () => {
+      showToast("🎨 Let's design a custom package — Tell us your goals via contact form or WhatsApp. We'll reply within 24h.", 'info');
+    });
+  }
+
+  // toast system
+  function showToast(message, type = "info") {
+    const toast = document.createElement('div');
+    toast.innerHTML = `<i class="fas fa-gem" style="margin-right:12px;"></i> ${message}`;
+    toast.style.position = 'fixed';
+    toast.style.bottom = '28px';
+    toast.style.right = '28px';
+    toast.style.backgroundColor = '#14141FCC';
+    toast.style.backdropFilter = 'blur(20px)';
+    toast.style.color = '#F0F3FF';
+    toast.style.borderLeft = `4px solid ${type === 'cta' ? '#00F0FF' : '#A855F7'}`;
+    toast.style.padding = '14px 26px';
+    toast.style.borderRadius = '48px';
+    toast.style.fontWeight = '500';
+    toast.style.zIndex = '1000';
+    toast.style.boxShadow = '0 8px 24px rgba(0,0,0,0.5)';
+    toast.style.fontFamily = "'Inter', sans-serif";
+    toast.style.fontSize = '0.9rem';
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      setTimeout(() => toast.remove(), 300);
+    }, 3200);
+  }
+
+  // initial render
+  renderPricing('monthly');
+
+  // navigation interactions (friendly)
+  const navLinksAll = document.querySelectorAll('.nav-links a:not(.cta-nav)');
+  navLinksAll.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // avoid blocking actual navigation if href is valid, we just show toast for demo context?
+      if (link.getAttribute('href') && link.getAttribute('href') !== '#') return;
+      e.preventDefault();
+      showToast(`📍 Innovation Lab — ${link.innerText} section. Check our flexible pricing or contact us.`);
+    });
+  });
+  const startProjectNav = document.querySelector('.cta-nav');
+  if(startProjectNav) {
+    startProjectNav.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast("🚀 Let's start your strategic project — Pick a plan or request a custom idea lab package.", 'cta');
+    });
+  }
+</script>
+</body>
+</html>
